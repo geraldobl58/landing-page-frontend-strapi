@@ -14,8 +14,16 @@ export const Menu = ({ links = [], logoData }) => {
 
   return (
     <S.Container>
-      <S.Button visible={visible} onClick={() => setVisible(true)}>
-        {visible ? <CloseIcon /> : <MenuIcon />}
+      <S.Button
+        visible={visible}
+        onClick={() => setVisible(true)}
+        aria-label="Open/Close menu"
+      >
+        {visible ? (
+          <CloseIcon aria-label="Close menu" />
+        ) : (
+          <MenuIcon aria-label="Open menu" />
+        )}
       </S.Button>
       <S.Container visible={visible} onClick={() => setVisible(false)}>
         <SectionContainer>

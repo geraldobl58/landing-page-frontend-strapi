@@ -16,7 +16,7 @@ export const Container = styled.div`
     right: 0;
     width: 100%;
     border-bottom: ${theme.colors.mediumGray};
-    background: ${theme.colors.white};
+    /* background: ${theme.colors.white}; */
     transition: all 300ms ease-in-out;
 
     > ${SectionContainer} {
@@ -41,6 +41,7 @@ export const Container = styled.div`
         height: 100vh;
         align-items: center;
         overflow-y: auto;
+        background: ${theme.colors.white};
       }
 
       & ${Heading} {
@@ -50,6 +51,10 @@ export const Container = styled.div`
       }
     }
   `}
+
+  @media (min-width: 768px) {
+    background: white;
+  }
 `;
 
 export const MenuContainer = styled.div`

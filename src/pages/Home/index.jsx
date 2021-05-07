@@ -1,14 +1,11 @@
 import React from 'react';
-import { Heading } from '../../components/Header';
 
-import * as S from './styles';
+import { Base } from '../Base';
+
+import { mockBase } from '../Base/mock';
 
 function Home() {
-  return (
-    <S.Wrapper>
-      <Heading>Title</Heading>
-    </S.Wrapper>
-  );
+  return <Base {...mockBase} />;
 }
 
 export default Home;
