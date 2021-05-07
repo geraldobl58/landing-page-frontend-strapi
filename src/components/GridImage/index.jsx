@@ -7,7 +7,7 @@ import { Heading } from '../Header';
 
 import * as S from './styles';
 
-export const GridText = ({ title, description, grid, background = false }) => {
+export const GridImage = ({ title, description, grid, background = false }) => {
   return (
     <SectionBackground background={background}>
       <S.Container>
@@ -17,11 +17,8 @@ export const GridText = ({ title, description, grid, background = false }) => {
         <TextComponent>{description}</TextComponent>
         <S.Grid>
           {grid.map((el) => (
-            <S.GridElement key={el.title}>
-              <Heading size="small" colorDark={!background} as="h3">
-                {el.title}
-              </Heading>
-              <TextComponent>{el.description}</TextComponent>
+            <S.GridElement key={el.srcImg}>
+              <S.Image src={el.srcImg} alt={el.altText} />
             </S.GridElement>
           ))}
         </S.Grid>
@@ -30,14 +27,14 @@ export const GridText = ({ title, description, grid, background = false }) => {
   );
 };
 
-GridText.propTypes = {
+GridImage.propTypes = {
   background: PropTypes.bool,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   grid: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
+      altText: PropTypes.string.isRequired,
+      srcImg: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };
